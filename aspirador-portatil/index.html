@@ -1,0 +1,740 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aspirador Portátil 4 em 1 | Frete Grátis + Pague na Entrega</title>
+    <meta name="description"
+        content="Aspirador de Pó Sem Fio Portátil 4 em 1. Motor 120W, 30.000 RPM, Filtro HEPA Lavável. Para casa e carro. Receba em casa e pague só na entrega. Frete grátis!" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ── PLAYER VSL ── */
+        .vsl-wrapper {
+            max-width: 840px;
+            margin: 0 auto 36px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5), 0 0 48px rgba(59, 130, 246, 0.18);
+            position: relative;
+            background: #000;
+        }
+
+        .vsl-thumb {
+            position: relative;
+            cursor: pointer;
+            display: block;
+            line-height: 0;
+        }
+
+        .vsl-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .vsl-thumb:hover .vsl-img {
+            transform: scale(1.015);
+            filter: brightness(0.82);
+        }
+
+        .vsl-play-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.28);
+            transition: background 0.3s;
+        }
+
+        .vsl-thumb:hover .vsl-play-overlay {
+            background: rgba(0, 0, 0, 0.42);
+        }
+
+        .vsl-play-btn {
+            width: clamp(64px, 12vw, 96px);
+            height: clamp(64px, 12vw, 96px);
+            filter: drop-shadow(0 4px 24px rgba(59, 130, 246, 0.6));
+            animation: playpulse 2.2s ease-in-out infinite;
+            transition: transform 0.25s;
+        }
+
+        .vsl-thumb:hover .vsl-play-btn {
+            transform: scale(1.12);
+        }
+
+        @keyframes playpulse {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 4px 24px rgba(59, 130, 246, 0.55));
+            }
+
+            50% {
+                filter: drop-shadow(0 4px 40px rgba(59, 130, 246, 0.9));
+            }
+        }
+
+        .vsl-play-label {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(0.82rem, 2vw, 1rem);
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .vsl-frame {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 */
+            background: #000;
+        }
+
+        .vsl-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Canvas de partículas (efeito futurista) -->
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="glow-line glow-line-1"></div>
+    <div class="glow-line glow-line-2"></div>
+
+    <!-- ================================================
+       SEÇÃO 1 — HERO
+  ================================================ -->
+    <section class="hero" id="hero">
+        <div class="container">
+
+            <div class="hero-badge">⚡ Oferta por tempo limitado</div>
+
+            <h1 class="hero-headline">
+                Chega de Poeira Acumulada, Pelo de Pet e Sujeira Difícil.
+                <span class="highlight">Aspire Qualquer Coisa, Em Qualquer Lugar, Sem Fio e Sem Complicação!</span>
+            </h1>
+
+            <h2 class="hero-subheadline">
+                O Aspirador Portátil 4 em 1 que limpa sua casa, seu carro e ainda infla objetos, com motor de 120W e
+                30.000 RPM. Sem fio. Sem peso. Sem enrolação.
+            </h2>
+
+            <ul class="hero-bullets">
+                <li>✅ Motor potente de 120W com até 30.000 RPM</li>
+                <li>✅ 4 funções: aspira, infla, compressor a vácuo e mais</li>
+                <li>✅ Filtro HEPA Lavável sem custo de reposição</li>
+                <li>✅ Bateria 4000mAh com até 30 minutos de uso contínuo</li>
+                <li>✅ Compacto: cabe no carro, na gaveta ou na mochila</li>
+            </ul>
+
+            <p class="hero-text">
+                Você não precisa carregar um aspirador pesado nem se preocupar com fio elétrico. Com esse aparelho na
+                mão você resolve a sujeira em segundos onde quer que esteja.
+            </p>
+
+            <!-- ▼ QUADRANTE 1 — VÍDEO DE VENDAS (VSL) -->
+            <div class="vsl-wrapper" id="video-vsl">
+                <div class="vsl-thumb" id="vsl-thumb" onclick="playVSL()" role="button"
+                    aria-label="Assistir ao vídeo do produto">
+                    <img src="imagens e videos/THUMBNAIL 01.png" alt="Aspirador Portátil 4 em 1 — Portátil e Poderoso"
+                        class="vsl-img" />
+                    <div class="vsl-play-overlay">
+                        <div class="vsl-play-btn">
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="40" cy="40" r="39" stroke="white" stroke-width="2" opacity="0.92" />
+                                <polygon points="32,24 60,40 32,56" fill="white" />
+                            </svg>
+                        </div>
+                        <div class="vsl-play-label">▶ Assistir ao vídeo</div>
+                    </div>
+                </div>
+                <div class="vsl-frame" id="vsl-frame" style="display:none;"></div>
+            </div>
+
+            <!-- Bloco de preço Hero -->
+            <div class="price-block" id="price-hero">
+                <div class="price-old">De: <s>R$ 139,99</s></div>
+                <div class="price-current">Por: <strong>R$ 119,99</strong></div>
+                <div class="price-savings">🎉 Você economiza R$ 20,00 nessa oferta</div>
+            </div>
+
+            <div class="cta-group">
+                <a href="#secao-oferta" class="btn btn-primary btn-hero" id="btn-hero-1un">
+                    🛒 QUERO O MEU AGORA.<br>PAGAR SÓ NA ENTREGA
+                </a>
+                <div class="trust-line">🚚 Frete Grátis &nbsp;|&nbsp; 💰 Pague só quando receber &nbsp;|&nbsp; 🔒 7 dias
+                    de garantia</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================
+       SEÇÃO 2 — DOR
+  ================================================ -->
+    <section class="pain-section" id="secao-dor">
+        <div class="container">
+            <h2 class="section-title">Você se Identifica Com Alguma Dessas Situações?</h2>
+            <p class="section-subtitle">Se você já passou por isso, o problema não é você. É a ferramenta errada.</p>
+
+            <ul class="pain-list">
+                <li><span class="pain-x">❌</span> Aspirador pesado que você tira do armário uma vez por semana e guarda
+                    com raiva</li>
+                <li><span class="pain-x">❌</span> Sujeira entre os bancos do carro que o aspirador normal não alcança
+                </li>
+                <li><span class="pain-x">❌</span> Pelo de gato ou cachorro espalhado no sofá, tapete e carpete</li>
+                <li><span class="pain-x">❌</span> Farelos, poeira e resíduos em cantinhos que nenhum aspirador chega
+                </li>
+                <li><span class="pain-x">❌</span> Filtros que entopem rápido e custam caro para trocar</li>
+                <li><span class="pain-x">❌</span> Fio que não alcança, tomada que não tem ou aparelho que morre na
+                    metade</li>
+            </ul>
+
+            <div class="pain-transition">
+                <p>💡 <strong>A solução que você procurava é leve, potente, sem fio e cabe na palma da sua mão.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+       SEÇÃO 3 — APRESENTAÇÃO DO PRODUTO
+  ================================================ -->
+    <section class="product-section" id="secao-produto">
+        <div class="container">
+            <h2 class="section-title">Conheça o Aspirador Portátil 4 em 1<br><span class="highlight">O Companheiro de
+                    Limpeza que Você vai Querer Sempre à Mão</span></h2>
+
+            <!-- ▼ QUADRANTE 2 — FOTO PRINCIPAL DO PRODUTO -->
+            <div id="foto-produto-principal" class="q2-wrap">
+                <img src="imagens e videos/Apresentação.png" alt="Mini Aspirador Portátil 4 em 1 — Poderoso e Prático"
+                    class="q2-img" />
+            </div>
+
+            <div class="product-copy">
+                <p>Pensa em um aparelho do tamanho de uma garrafa de água que aspira poeira, pelos, líquidos e pequenos
+                    detritos com a mesma força de um aspirador de mesa. Isso é o Aspirador Portátil 4 em 1. Ele foi
+                    projetado para quem não tem tempo a perder, não quer carregar peso e precisa de resultado rápido.
+                </p>
+                <p>O motor de <strong>120W com até 30.000 RPM</strong> entrega sucção real, não aquela força fraca de
+                    aspirador de brinquedo. Você consegue limpar o interior do carro, o sofá, o tapete, a gaveta da
+                    cozinha e a estante onde quiser, do jeito que quiser, sem depender de tomada.</p>
+                <p>A bateria de <strong>lítio 4000mAh</strong> garante até 30 minutos de uso contínuo com proteção
+                    contra superaquecimento e sobrecarga. Carregou uma vez e usou o dia inteiro quando precisar.</p>
+                <p>E o melhor: o <strong>Filtro HEPA Lavável</strong> retém 99% das partículas finas incluindo ácaros,
+                    polens e alérgenos e você nunca precisa comprar filtro novo. É só lavar e reutilizar. Simples e
+                    econômico.</p>
+
+                <div class="tech-pills">
+                    <div class="pill">⚡ Motor 120W</div>
+                    <div class="pill">🔄 30.000 RPM</div>
+                    <div class="pill">🔋 4000mAh</div>
+                    <div class="pill">⏱ 30 min de uso</div>
+                    <div class="pill">🌬 Filtro HEPA</div>
+                    <div class="pill">🏠 Casa e Carro</div>
+                </div>
+
+                <!-- ▼ QUADRANTE 3 — FOTO LIFESTYLE -->
+                <div id="foto-lifestyle" class="q2-wrap" style="margin-top:36px;">
+                    <img src="imagens e videos/LIMPEZA 2.png"
+                        alt="Aspirador Portátil 4 em 1 em uso — Limpeza fácil em casa e no carro" class="q2-img" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+       SEÇÃO 4 — BENEFÍCIOS EM CARDS
+  ================================================ -->
+    <section class="benefits-section" id="secao-beneficios">
+        <div class="container">
+            <h2 class="section-title">Por Que Quem Compra <span class="highlight">Não Quer Devolver?</span></h2>
+            <p class="section-subtitle">Veja o que muda na sua rotina de limpeza depois que ele chega:</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔇</div>
+                    <h3>Silencioso e Potente</h3>
+                    <p>Aspira com força real sem aquele barulho irritante. Funciona enquanto a família dorme.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚗</div>
+                    <h3>Perfeito Para o Carro</h3>
+                    <p>Alcança frestas dos bancos, tapetes e porta-luvas. Mantém o carro sempre impecável.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🐾</div>
+                    <h3>Elimina Pelo de Pet</h3>
+                    <p>Acaba com pelos de gato e cachorro no sofá, tapete e almofada sem esforço.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔋</div>
+                    <h3>Bateria de Longa Duração</h3>
+                    <p>30 minutos de uso sem fio com proteção contra superaquecimento e sobrecarga.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌀</div>
+                    <h3>Filtro HEPA Lavável</h3>
+                    <p>Retém 99% dos alérgenos. Não precisa trocar, só lavar. Zero custo extra.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📦</div>
+                    <h3>4 em 1 Multifuncional</h3>
+                    <p>Aspira, infla, funciona como compressor a vácuo e vem com acessórios completos.</p>
+                </div>
+            </div>
+
+            <!-- ▼ QUADRANTE 4 — VÍDEO DE DEPOIMENTO DE CLIENTE -->
+            <div class="depo-video-wrapper" id="depoimento-video" style="text-align:center;">
+                <div class="depo-video-label"
+                    style="display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:20px;gap:8px;">
+                    <span class="depo-video-tag">🎬 DEPOIMENTO EM VÍDEO</span>
+                    <p style="text-align:center;margin:0;">Veja na prática o que um cliente real achou do produto após
+                        receber em casa</p>
+                </div>
+                <!-- Depoimento em vídeo — YouTube Shorts ho_nypXlC_c -->
+                <div class="depo-frame-wrap" id="depo-frame-wrap" style="padding-top:75%;">
+                    <!-- Thumbnail clicável — posicionada em absolute para preencher o padding-top:56.25% -->
+                    <div id="depo-thumb" onclick="playDepoVideo()"
+                        style="position:absolute;inset:0;cursor:pointer;line-height:0;">
+                        <img src="imagens e videos/aspirador.jpg"
+                            alt="Assistir depoimento de cliente — Aspirador Portátil 4 em 1"
+                            style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;" />
+                        <div
+                            style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(0,0,0,0.30);">
+                            <svg width="72" height="72" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                style="filter:drop-shadow(0 4px 24px rgba(59,130,246,0.7));animation:playpulse 2.2s ease-in-out infinite;">
+                                <circle cx="40" cy="40" r="39" stroke="white" stroke-width="2" opacity="0.92" />
+                                <polygon points="32,24 60,40 32,56" fill="white" />
+                            </svg>
+                            <span
+                                style="font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:700;color:#fff;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,0.6);">▶
+                                Ver depoimento</span>
+                        </div>
+                    </div>
+                    <!-- iframe oculto até clicar -->
+                    <iframe id="depo-iframe" src="" title="Depoimento de cliente — Aspirador Portátil 4 em 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        style="position:absolute;inset:0;width:100%;height:100%;border:0;display:none;"></iframe>
+                </div>
+                <script>
+                    function playDepoVideo() {
+                        document.getElementById('depo-thumb').style.display = 'none';
+                        document.getElementById('depo-frame-wrap').style.paddingTop = '56.25%';
+                        var iframe = document.getElementById('depo-iframe');
+                        iframe.src = 'https://www.youtube.com/embed/ho_nypXlC_c?rel=0&modestbranding=1&playsinline=1&autoplay=1';
+                        iframe.style.display = 'block';
+                    }
+                </script>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================
+       SEÇÃO 5 — PROVA SOCIAL / DEPOIMENTOS
+  ================================================ -->
+    <section class="testimonials-section" id="secao-depoimentos">
+        <div class="container">
+            <h2 class="section-title">O Que Estão Dizendo Quem Já Recebeu o Produto</h2>
+            <p class="section-subtitle">Abaixo você vê depoimentos reais de pessoas que receberam o Aspirador Portátil 4
+                em 1, testaram e aprovaram. Sem script, sem ator. Gente de verdade compartilhando a experiência.</p>
+
+
+            <div class="testimonials-grid">
+
+                <div id="depoimento-1" class="media-depo"
+                    style="grid-column: 1 / -1; display:flex; justify-content:center;">
+                    <img src="imagens e videos/depoimentos 1.png"
+                        alt="Depoimento de cliente — Aspirador Portátil 4 em 1"
+                        style="width:100%;max-width:700px;height:auto;display:block;border-radius:12px;" />
+                </div>
+
+                <div id="depoimento-2" class="media-depo"
+                    style="grid-column: 1 / -1; display:flex; justify-content:center;">
+                    <img src="imagens e videos/depoimento 2.png"
+                        alt="Depoimento de cliente 2 — Aspirador Portátil 4 em 1"
+                        style="width:100%;max-width:700px;height:auto;display:block;border-radius:12px;" />
+                </div>
+
+                <div id="depoimento-3" class="media-depo"
+                    style="grid-column: 1 / -1; display:flex; justify-content:center;">
+                    <img src="imagens e videos/depoimento 3.png"
+                        alt="Depoimento de cliente 3 — Aspirador Portátil 4 em 1"
+                        style="width:100%;max-width:700px;height:auto;display:block;border-radius:12px;" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+       SEÇÃO 6 — OFERTA E KITS
+  ================================================ -->
+    <section class="offer-section" id="secao-oferta">
+        <div class="container">
+            <h2 class="section-title">Escolha o Seu Kit e Receba em Casa</h2>
+            <p class="section-subtitle">Você não precisa pagar nada agora. Recebe, testa e só paga quando o produto
+                estiver na sua mão.</p>
+
+            <div class="trust-pills">
+                <div class="trust-pill">🚚 Frete 100% Grátis para Todo o Brasil</div>
+                <div class="trust-pill">💰 Pague Somente na Entrega</div>
+                <div class="trust-pill">🔒 7 Dias de Garantia Garantidos por Lei</div>
+            </div>
+
+            <div class="kits-grid">
+
+                <!-- KIT 1 UNIDADE -->
+                <div class="kit-card" id="kit-1">
+                    <div class="kit-badge">Mais Pedido</div>
+                    <h3 class="kit-title">🛒 Kit Starter — 1 Unidade</h3>
+                    <p class="kit-description">Ideal para quem quer experimentar e ter sempre à mão em casa ou no carro.
+                        Um jeito prático de começar.</p>
+                    <div class="price-block">
+                        <div class="price-old">De: <s>R$ 139,99</s></div>
+                        <div class="price-current">Por: <strong>R$ 119,99</strong></div>
+                        <div class="price-savings">🎉 Você economiza R$ 20,00 nessa oferta</div>
+                    </div>
+                    <a href="https://entrega.logzz.com.br/pay/memq4kl8r/1-unidade-100" class="btn btn-primary"
+                        id="btn-kit-1">
+                        <span class="btn-l1"></span>🛒 PEDIR 1 UNIDADE</span><span class="btn-l2">PAGAR NA
+                            ENTREGA</span>
+                    </a>
+                </div>
+
+                <!-- KIT 2 UNIDADES -->
+                <div class="kit-card kit-featured" id="kit-2">
+                    <div class="kit-badge badge-gold">⭐ Melhor Custo Benefício</div>
+                    <h3 class="kit-title">🎁 Kit Duplo — 2 Unidades</h3>
+                    <p class="kit-description">Um pro carro, um pra casa. Ou presenteie alguém especial com algo
+                        realmente útil. Sai muito mais em conta!</p>
+                    <div class="price-block">
+                        <div class="price-old">De: <s>R$ 239,99</s></div>
+                        <div class="price-current">Por: <strong>R$ 199,99</strong></div>
+                        <div class="price-savings">🎉 Você economiza R$ 40,00 nessa oferta</div>
+                    </div>
+                    <a href="https://entrega.logzz.com.br/pay/memq4kl8r/2-unidades-19999" class="btn btn-gold"
+                        id="btn-kit-2">
+                        <span class="btn-l1">🎁 PEDIR 2 UNIDADES</span><span class="btn-l2">PAGAR NA ENTREGA</span>
+                    </a>
+                </div>
+
+                <!-- KIT 3 UNIDADES -->
+                <div class="kit-card" id="kit-3">
+                    <div class="kit-badge badge-green">💚 Maior Economia</div>
+                    <h3 class="kit-title">🏆 Kit Família — 3 Unidades</h3>
+                    <p class="kit-description">Um para cada cômodo ou para dividir com a família. O melhor preço por
+                        unidade de toda a oferta.</p>
+                    <div class="price-block">
+                        <div class="price-old">De: <s>R$ 359,99</s></div>
+                        <div class="price-current">Por: <strong>R$ 290,00</strong></div>
+                        <div class="price-savings">🎉 Você economiza R$ 69,99 nessa oferta</div>
+                    </div>
+                    <a href="https://entrega.logzz.com.br/pay/memq4kl8r/tavbc-3-unidades" class="btn btn-primary"
+                        id="btn-kit-3">
+                        <span class="btn-l1">🏆 PEDIR 3 UNIDADES</span><span class="btn-l2">PAGAR NA ENTREGA</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+       SEÇÃO 7 — GARANTIA
+  ================================================ -->
+    <section class="guarantee-section" id="secao-garantia">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <h2 class="guarantee-title">Sua Compra é 100% Segura. Garantia de 7 Dias</h2>
+                <p class="guarantee-text">
+                    Você recebe o produto na sua casa, confere tudo com calma e só paga na entrega. Se por qualquer
+                    motivo o produto não atender às suas expectativas, você tem <strong>7 dias de garantia</strong> —
+                    esse é o seu direito de arrependimento garantido por lei para compras online.
+                </p>
+                <p class="guarantee-text">
+                    Não tem risco. Não tem pegadinha. Você testa, usa e decide. Se não gostar, aciona a garantia e
+                    acabou. Simples assim.
+                </p>
+                <div class="guarantee-badges">
+                    <div class="gbadge">✅ Sem risco de perda</div>
+                    <div class="gbadge">✅ Proteção legal garantida</div>
+                    <div class="gbadge">✅ Zero burocracia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+       SEÇÃO 8 — FAQ
+  ================================================ -->
+    <section class="faq-section" id="secao-faq">
+        <div class="container">
+            <h2 class="section-title">Dúvidas Frequentes</h2>
+            <p class="section-subtitle">A gente sabe que você pode ter perguntas antes de comprar. Aqui estão as mais
+                comuns:</p>
+
+            <div class="faq-list">
+
+                <details class="faq-item" id="faq-1">
+                    <summary class="faq-question">Posso realmente pagar só quando receber?</summary>
+                    <div class="faq-answer">
+                        <p>Sim! O pagamento é feito somente na entrega (sistema COD). Você faz o pedido, o produto chega
+                            na sua porta e você paga diretamente ao entregador. Nenhum valor é cobrado antecipadamente.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="faq-2">
+                    <summary class="faq-question">O frete é mesmo gratuito?</summary>
+                    <div class="faq-answer">
+                        <p>Sim, frete 100% gratuito para todo o Brasil. Não importa onde você mora, Nordeste, Norte,
+                            Sul, Sudeste ou Centro-Oeste, o produto chega sem nenhum custo adicional.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="faq-3">
+                    <summary class="faq-question">Quanto tempo dura a bateria?</summary>
+                    <div class="faq-answer">
+                        <p>A bateria de lítio 4000mAh garante até 30 minutos de uso contínuo. Para a maioria das
+                            limpezas rápidas do dia a dia como carro, sofá e tapete, isso é mais do que suficiente.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="faq-4">
+                    <summary class="faq-question">É realmente potente ou é fraco como outros portáteis?</summary>
+                    <div class="faq-answer">
+                        <p>Esse é diferente. O motor de 120W com 30.000 RPM entrega uma sucção real. Ele foi projetado
+                            para limpar, não para enfeitar. Funciona em poeira fina, pelos de pet, farelos, terra e até
+                            líquidos leves.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="faq-5">
+                    <summary class="faq-question">O filtro é caro para repor?</summary>
+                    <div class="faq-answer">
+                        <p>Não precisa repor. O filtro HEPA é lavável. É só retirar, lavar em água corrente, deixar
+                            secar e colocar de volta. Zero gasto com manutenção.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="faq-6">
+                    <summary class="faq-question">E se eu não gostar do produto?</summary>
+                    <div class="faq-answer">
+                        <p>Você tem 7 dias de garantia a partir do recebimento. Esse é seu direito de arrependimento
+                            previsto no Código de Defesa do Consumidor para compras online. Sem burocracia e sem dor de
+                            cabeça.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="faq-7">
+                    <summary class="faq-question">Funciona para uso no carro e em casa?</summary>
+                    <div class="faq-answer">
+                        <p>Sim! Esse é exatamente o diferencial. Ele é compacto e leve o suficiente para manter dentro
+                            do carro e potente o bastante para limpar a casa. Um aparelho, múltiplos usos.</p>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+       SEÇÃO 9 — CTA FINAL
+  ================================================ -->
+    <section class="final-cta-section" id="secao-cta-final">
+        <div class="container">
+            <h2 class="cta-title">Não Deixe a Sujeira Ganhar Mais Um Dia</h2>
+            <p class="cta-text">
+                Você já sabe o problema. Já viu a solução. O próximo passo é simples: faça seu pedido agora, receba em
+                casa e pague só quando o produto estiver na sua mão. Sem risco. Sem stress.
+            </p>
+            <p class="cta-text">
+                <strong>Frete grátis. Pagamento na entrega. 7 dias de garantia.</strong><br>Tudo do jeito que tem que
+                ser.
+            </p>
+
+            <div class="price-block price-block-final">
+                <div class="price-old">De: <s>R$ 139,99</s></div>
+                <div class="price-current">Por: <strong>R$ 119,99</strong></div>
+                <div class="price-savings">🎉 Você economiza R$ 20,00 nessa oferta</div>
+            </div>
+
+            <a href="#secao-oferta" class="btn btn-primary btn-final" id="btn-cta-final">
+                🛒 QUERO O MEU AGORA.<br>PAGAR SÓ NA ENTREGA
+            </a>
+
+            <div class="final-trust">
+                <span>🛡️ Garantia de 7 dias</span>
+                <span>🚚 Frete grátis</span>
+                <span>💰 Pague só na entrega</span>
+                <span>🔒 Compra 100% segura</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+       RODAPÉ
+  ================================================ -->
+    <footer class="footer" id="rodape">
+        <div class="container">
+            <p>© 2025 — Todos os direitos reservados. Este site é independente e não tem vínculo oficial com nenhuma
+                marca.</p>
+            <p>Produto comercializado via Logzz. Pagamento realizado somente na entrega (COD).</p>
+            <p>Garantia de 7 dias conforme o Art. 49 do Código de Defesa do Consumidor (compras realizadas fora do
+                estabelecimento comercial).</p>
+            <p style="margin-top:14px;">
+                <a href="#" onclick="abrirModal('modal-privacidade');return false;"
+                    style="color:#93c5fd;text-decoration:underline;font-size:0.8rem;">Política de Privacidade</a>
+                &nbsp;|&nbsp;
+                <a href="#" onclick="abrirModal('modal-termos');return false;"
+                    style="color:#93c5fd;text-decoration:underline;font-size:0.8rem;">Termos de Uso</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ================================================
+         MODAL — POLÍTICA DE PRIVACIDADE
+    ================================================ -->
+    <div id="modal-privacidade"
+        style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);overflow-y:auto;">
+        <div
+            style="max-width:720px;margin:40px auto;background:#0d1117;border:1px solid rgba(59,130,246,0.25);border-radius:16px;padding:40px 36px;position:relative;color:#cbd5e1;">
+            <button onclick="fecharModal('modal-privacidade')"
+                style="position:absolute;top:16px;right:20px;background:none;border:none;color:#94a3b8;font-size:1.6rem;cursor:pointer;line-height:1;">✕</button>
+            <h2 style="color:#fff;font-size:1.4rem;font-weight:900;margin-bottom:24px;">🔒 Política de Privacidade</h2>
+
+            <p style="margin-bottom:12px;"><strong style="color:#fff;">Última atualização:</strong> março de 2025</p>
+
+            <p style="margin-bottom:16px;">Esta Política de Privacidade descreve como coletamos, usamos e protegemos as
+                informações dos visitantes deste site.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">1. Informações Coletadas</h3>
+            <p style="margin-bottom:12px;">Podemos coletar informações como nome, endereço de entrega e telefone
+                fornecidos no momento do pedido para viabilizar a entrega e o contato. Não coletamos dados de cartão de
+                crédito, pois o pagamento é realizado integralmente na entrega.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">2. Uso das Informações</h3>
+            <p style="margin-bottom:12px;">As informações coletadas são utilizadas exclusivamente para: processar e
+                entregar pedidos; entrar em contato sobre o status da entrega; e cumprir obrigações legais.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">3. Compartilhamento de Dados</h3>
+            <p style="margin-bottom:12px;">Seus dados não são vendidos a terceiros. Podemos compartilhá-los com empresas
+                de logística e entrega estritamente na medida necessária para concluir o pedido.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">4. Cookies</h3>
+            <p style="margin-bottom:12px;">Este site pode utilizar cookies para melhorar a experiência de navegação e
+                medir o desempenho de anúncios. Você pode desativar cookies nas configurações do seu navegador.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">5. Seus Direitos (LGPD)</h3>
+            <p style="margin-bottom:12px;">De acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você tem
+                direito a acessar, corrigir ou solicitar a exclusão de seus dados pessoais. Para exercer esses direitos,
+                entre em contato conosco.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">6. Segurança</h3>
+            <p style="margin-bottom:12px;">Adotamos medidas técnicas adequadas para proteger suas informações contra
+                acesso não autorizado, perda ou divulgação indevida.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">7. Alterações</h3>
+            <p style="margin-bottom:24px;">Esta política pode ser atualizada periodicamente. Recomendamos revisitá-la
+                regularmente.</p>
+
+            <button onclick="fecharModal('modal-privacidade')"
+                style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;border:none;border-radius:8px;padding:10px 28px;font-size:0.9rem;font-weight:700;cursor:pointer;">Fechar</button>
+        </div>
+    </div>
+
+    <!-- ================================================
+         MODAL — TERMOS DE USO
+    ================================================ -->
+    <div id="modal-termos"
+        style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);overflow-y:auto;">
+        <div
+            style="max-width:720px;margin:40px auto;background:#0d1117;border:1px solid rgba(59,130,246,0.25);border-radius:16px;padding:40px 36px;position:relative;color:#cbd5e1;">
+            <button onclick="fecharModal('modal-termos')"
+                style="position:absolute;top:16px;right:20px;background:none;border:none;color:#94a3b8;font-size:1.6rem;cursor:pointer;line-height:1;">✕</button>
+            <h2 style="color:#fff;font-size:1.4rem;font-weight:900;margin-bottom:24px;">📋 Termos de Uso</h2>
+
+            <p style="margin-bottom:12px;"><strong style="color:#fff;">Última atualização:</strong> março de 2025</p>
+
+            <p style="margin-bottom:16px;">Ao acessar e utilizar este site, você concorda com os Termos de Uso descritos
+                abaixo. Leia atentamente antes de realizar qualquer pedido.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">1. Sobre o Site</h3>
+            <p style="margin-bottom:12px;">Este é um site de vendas independente, sem vínculo oficial com fabricantes.
+                Os produtos são comercializados por parceiros logísticos e entregues diretamente ao consumidor.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">2. Processo de Compra</h3>
+            <p style="margin-bottom:12px;">Ao realizar um pedido, você confirma que as informações fornecidas (nome,
+                endereço, telefone) são verdadeiras. O pagamento é realizado <strong style="color:#fff;">exclusivamente
+                    na entrega</strong> — nenhum valor é cobrado antecipadamente.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">3. Prazo e Entrega</h3>
+            <p style="margin-bottom:12px;">O prazo de entrega varia de acordo com a região. Envios são realizados para
+                todo o Brasil. O cliente será contatado para confirmação do pedido antes do envio.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">4. Direito de Arrependimento e Garantia</h3>
+            <p style="margin-bottom:12px;">Conforme o Art. 49 do Código de Defesa do Consumidor, o consumidor tem
+                <strong style="color:#fff;">7 dias</strong> a partir do recebimento do produto para exercer o direito de
+                arrependimento, sem necessidade de justificativa, com devolução integral do valor pago.
+            </p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">5. Responsabilidades</h3>
+            <p style="margin-bottom:12px;">Este site não se responsabiliza por atrasos causados por transportadoras,
+                eventos de força maior ou informações de entrega incorretas fornecidas pelo cliente.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">6. Propriedade Intelectual</h3>
+            <p style="margin-bottom:12px;">Todo o conteúdo deste site (textos, imagens, layout) é protegido. É proibida
+                a reprodução sem autorização expressa.</p>
+
+            <h3 style="color:#e2e8f0;font-size:1rem;margin:20px 0 8px;">7. Foro</h3>
+            <p style="margin-bottom:24px;">Fica eleito o foro da comarca do consumidor para dirimir eventuais conflitos
+                decorrentes destes termos, conforme legislação brasileira aplicável.</p>
+
+            <button onclick="fecharModal('modal-termos')"
+                style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;border:none;border-radius:8px;padding:10px 28px;font-size:0.9rem;font-weight:700;cursor:pointer;">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal(id) {
+            document.getElementById(id).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function fecharModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        // Fechar ao clicar fora do conteúdo
+        document.querySelectorAll('[id^="modal-"]').forEach(function (modal) {
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) fecharModal(modal.id);
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

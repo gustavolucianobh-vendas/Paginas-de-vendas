@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Pedido Confirmado — Obrigado!</title>
+
+    <!-- ================================================================
+       ✅ GOOGLE ADS — SNIPPET GLOBAL INSTALADO
+       ID da conta: AW-777524549
+       ================================================================ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-777524549"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-777524549');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ─── RESET ─── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ─── TOKENS ─── */
+        :root {
+            --green-400: #4ade80;
+            --green-500: #22c55e;
+            --green-600: #16a34a;
+            --green-700: #15803d;
+            --blue-900: #0f172a;
+            --blue-800: #1e293b;
+            --blue-700: #334155;
+            --slate-400: #94a3b8;
+            --slate-300: #cbd5e1;
+            --white: #ffffff;
+            --radius: 20px;
+        }
+
+        /* ─── BASE ─── */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--blue-900);
+            background-image:
+                radial-gradient(ellipse 80% 60% at 50% -10%, rgba(34, 197, 94, .18) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 110%, rgba(15, 23, 42, .8) 0%, transparent 60%);
+            padding: 32px 16px 48px;
+            color: var(--white);
+        }
+
+        /* ─── CARD PRINCIPAL ─── */
+        .card {
+            width: 100%;
+            max-width: 600px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, .95) 0%, rgba(15, 23, 42, .98) 100%);
+            border: 1px solid rgba(74, 222, 128, .2);
+            border-radius: var(--radius);
+            padding: 52px 44px 44px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, .04),
+                0 24px 64px rgba(0, 0, 0, .5),
+                0 0 80px rgba(34, 197, 94, .07);
+            animation: fadeUp .6s ease both;
+        }
+
+        /* Brilho superior */
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 30% at 50% 0%, rgba(74, 222, 128, .12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Linha de acento no topo */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--green-400), transparent);
+            border-radius: 99px;
+        }
+
+        /* ─── ANIMAÇÕES ─── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(.4);
+            }
+
+            70% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: .4;
+            }
+
+            100% {
+                transform: scale(1.35);
+                opacity: 0;
+            }
+        }
+
+        @keyframes dash {
+            from {
+                stroke-dashoffset: 60;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* ─── ÍCONE ─── */
+        .icon-wrap {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 32px;
+            animation: popIn .55s cubic-bezier(.175, .885, .32, 1.275) .1s both;
+        }
+
+        .icon-wrap::before,
+        .icon-wrap::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid var(--green-500);
+            animation: pulse-ring 2.2s ease-out infinite;
+        }
+
+        .icon-wrap::after {
+            animation-delay: 1.1s;
+        }
+
+        .icon-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--green-500), var(--green-700));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(34, 197, 94, .35);
+        }
+
+        .icon-circle svg {
+            width: 44px;
+            height: 44px;
+            stroke: #fff;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+            animation: dash .5s ease .5s forwards;
+        }
+
+        /* ─── BADGE ─── */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(74, 222, 128, .12);
+            border: 1px solid rgba(74, 222, 128, .3);
+            color: var(--green-400);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 99px;
+            margin-bottom: 20px;
+        }
+
+        /* ─── TÍTULO ─── */
+        h1 {
+            font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+            font-weight: 900;
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 14px;
+            letter-spacing: -.5px;
+        }
+
+        h1 .accent {
+            background: linear-gradient(90deg, var(--green-400), var(--green-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--slate-400);
+            line-height: 1.75;
+            max-width: 440px;
+            margin: 0 auto 40px;
+        }
+
+        /* ─── DESTAQUE CENTRAL ─── */
+        .highlight-box {
+            background: rgba(74, 222, 128, .07);
+            border: 1px solid rgba(74, 222, 128, .2);
+            border-radius: 14px;
+            padding: 22px 24px;
+            margin-bottom: 36px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-align: left;
+        }
+
+        .highlight-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: rgba(74, 222, 128, .12);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .highlight-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--green-400);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .highlight-text strong {
+            display: block;
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--green-400);
+            margin-bottom: 3px;
+        }
+
+        .highlight-text span {
+            font-size: .875rem;
+            color: var(--slate-400);
+            line-height: 1.5;
+        }
+
+        /* ─── TIMELINE ─── */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .tl-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            position: relative;
+        }
+
+        /* Linha conectora */
+        .tl-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 44px;
+            width: 2px;
+            height: calc(100% - 12px);
+            background: linear-gradient(to bottom, rgba(74, 222, 128, .4), rgba(74, 222, 128, .05));
+        }
+
+        .tl-dot {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .8rem;
+            font-weight: 800;
+            margin-top: 2px;
+            z-index: 1;
+        }
+
+        .tl-dot.done {
+            background: linear-gradient(135deg, var(--green-500), var(--green-700));
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(34, 197, 94, .3);
+        }
+
+        .tl-dot.pending {
+            background: var(--blue-700);
+            color: var(--slate-400);
+            border: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .tl-body {
+            padding: 8px 0 24px;
+        }
+
+        .tl-body strong {
+            display: block;
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 3px;
+        }
+
+        .tl-body span {
+            font-size: .855rem;
+            color: var(--slate-400);
+            line-height: 1.55;
+        }
+
+        .tl-body .tag-time {
+            display: inline-block;
+            background: rgba(74, 222, 128, .1);
+            color: var(--green-400);
+            font-size: .72rem;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 99px;
+            margin-top: 6px;
+            letter-spacing: .5px;
+        }
+
+        /* ─── SEPARADOR ─── */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .08), transparent);
+            margin: 4px 0 36px;
+        }
+
+        /* ─── SELOS ─── */
+        .seals {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px 30px;
+        }
+
+        .seal {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--slate-400);
+        }
+
+        .seal svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--green-500);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        /* ─── RODAPÉ ─── */
+        .footer-note {
+            margin-top: 32px;
+            font-size: .78rem;
+            color: var(--blue-700);
+            color: rgba(148, 163, 184, .45);
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* ─── RESPONSIVO ─── */
+        @media (max-width: 480px) {
+            .card {
+                padding: 40px 22px 36px;
+            }
+
+            .highlight-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card" role="main">
+
+        <!-- Ícone animado -->
+        <div class="icon-wrap" aria-hidden="true">
+            <div class="icon-circle">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Badge -->
+        <div class="badge">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+                <circle cx="5" cy="5" r="5" />
+            </svg>
+            Pedido Recebido
+        </div>
+
+        <!-- Título -->
+        <h1>
+            Sua compra está<br>
+            <span class="accent">confirmada!</span> 🎉
+        </h1>
+
+        <p class="subtitle">
+            Seu pedido foi processado com sucesso e já está sendo preparado para envio.
+            Fique tranquilo — você não precisa pagar agora.
+        </p>
+
+        <!-- Destaque: Pagamento na Entrega -->
+        <div class="highlight-box" role="note" aria-label="Informação importante sobre pagamento">
+            <div class="highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <rect x="2" y="5" width="20" height="14" rx="2" />
+                    <line x1="2" y1="10" x2="22" y2="10" />
+                    <line x1="6" y1="15" x2="10" y2="15" />
+                </svg>
+            </div>
+            <div class="highlight-text">
+                <strong>💳 Pagamento somente na entrega</strong>
+                <span>Você só paga quando o produto chegar na sua porta. Sem risco, sem complicação.</span>
+            </div>
+        </div>
+
+        <!-- Timeline de próximos passos -->
+        <div class="timeline" role="list" aria-label="Etapas do pedido">
+
+            <div class="tl-item" role="listitem">
+                <div class="tl-dot done" aria-label="Etapa concluída">✓</div>
+                <div class="tl-body">
+                    <strong>Pedido confirmado</strong>
+                    <span>Seu pedido foi registrado com sucesso em nosso sistema.</span>
+                    <div class="tag-time">Agora</div>
+                </div>
+            </div>
+
+            <div class="tl-item" role="listitem">
+                <div class="tl-dot done" aria-label="Etapa concluída">✓</div>
+                <div class="tl-body">
+                    <strong>Pedido em separação</strong>
+                    <span>O produto está sendo separado e embalado para despacho.</span>
+                    <div class="tag-time">Em até 24 horas</div>
+                </div>
+            </div>
+
+            <div class="tl-item" role="listitem">
+                <div class="tl-dot pending" aria-label="Etapa pendente">3</div>
+                <div class="tl-body">
+                    <strong>Enviado para entrega</strong>
+                    <span>Seu produto sairá para entrega pelos Correios ou transportadora parceira.</span>
+                    <div class="tag-time">Aguardando despacho</div>
+                </div>
+            </div>
+
+            <div class="tl-item" role="listitem">
+                <div class="tl-dot pending" aria-label="Etapa pendente">4</div>
+                <div class="tl-body">
+                    <strong>Entregue — Pague na hora</strong>
+                    <span>Receba o produto, confira e efetue o pagamento ao entregador.</span>
+                    <div class="tag-time">Na sua porta</div>
+                </div>
+            </div>
+
+        </div><!-- /timeline -->
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <!-- Selos de confiança -->
+        <div class="seals" role="list" aria-label="Garantias">
+
+            <div class="seal" role="listitem">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                Compra 100% segura
+            </div>
+
+            <div class="seal" role="listitem">
+                <svg viewBox="0 0 24 24">
+                    <rect x="1" y="3" width="15" height="13" rx="1" />
+                    <path d="M16 8h4l3 3v5h-7V8z" />
+                    <circle cx="5.5" cy="18.5" r="2.5" />
+                    <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+                Frete grátis
+            </div>
+
+            <div class="seal" role="listitem">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                    <path d="M9 12l2 2 4-4" />
+                </svg>
+                Sem pagamento antecipado
+            </div>
+
+            <div class="seal" role="listitem">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+                Recebe em até 24h no sistema
+            </div>
+
+        </div><!-- /seals -->
+
+        <!-- Nota rodapé do card -->
+        <p class="footer-note">
+            Pedido processado via <strong style="color:rgba(148,163,184,.65)">Logzz</strong> &mdash; plataforma de
+            pagamento na entrega.<br>
+            Em caso de dúvidas, entre em contato com o vendedor.
+        </p>
+
+    </div><!-- /card -->
+
+    <!-- ================================================================
+       ✅ EVENTO DE CONVERSÃO DO GOOGLE ADS — INSTALADO
+       Conversão: Joelheira Premium | ID: AW-777524549/je19CMzd4IEcEMWq4PIC
+       ================================================================ -->
+
+    <!-- Event snippet for Joelheira Premium conversion page -->
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-777524549/je19CMzd4IEcEMWq4PIC',
+            'value': 33.26,
+            'currency': 'BRL',
+            'transaction_id': ''
+            // 'new_customer': true /* calcule dinamicamente e preencha com true/false */
+        });
+    </script>
+
+</body>
+
+</html>
